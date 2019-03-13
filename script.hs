@@ -42,3 +42,8 @@ qtdeIguais x y z
  -- Defina a funcao
 todosDiferentes :: Int -> Int -> Int -> Bool
 todosDiferentes x y z = ( x /= y) && ( y /= z) && ( x /= z)
+
+--O que esta errado com a seguinte definicao detodosDiferentes:todosDiferentes n m p = ( ( n/=m ) && ( m/=p ) )O conjunto de testes que voce definiu na questao anterior funciona com esta definicao?
+
+-- Ele não testa n com p( teste 3 2 3 retorna true e deveria ser false)
+
