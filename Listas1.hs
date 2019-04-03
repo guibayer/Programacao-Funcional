@@ -36,12 +36,12 @@ iSort :: [Int] -> [Int]
 iSort [] = []
 iSort (a:x) = ins a (iSort x)
 
-isIn :: Int -> [Int] -> Bool
-isIn a [] = [a]
-isIn a (b:x)
- | a == b = True
- | otherwise = False
-
-membro :: [Int] -> Int -> Bool
-membro [] v = [] v
-membro (a:x) v = isIn a v || membro v x
+maiorEmenor :: [Int] -> (Int, Int)
+maiorEmenor x = let s = iSort x
+ in (primeiro s, ultimo s)
+ where
+ primeiro :: [Int] -> Int
+ primeiro (a:x) = a
+ ultimo :: [Int] -> Int
+ ultimo [a] = a
+ ultimo (a:x) = ultimo x
